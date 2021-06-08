@@ -13,7 +13,6 @@ from keras.optimizers import RMSprop
 
 def NeuralNetwork(input_shape, output_shape):
     model = Sequential()
-    #model.add(Input(input_shape))
     model.add(Dense(512, input_shape=input_shape, activation='relu', kernel_initializer='he_uniform'))
     model.add(Dense(256, activation='relu', kernel_initializer='he_uniform'))
     model.add(Dense(64, activation='relu', kernel_initializer='he_uniform'))
@@ -22,8 +21,6 @@ def NeuralNetwork(input_shape, output_shape):
     model.summary()
     return model
 
-
-# Brain of Agent || Blueprint of Agent
 class DQNAgent:
     def __init__(self):
         self.env = flappy_bird_gym.make("FlappyBird-v0")
@@ -74,9 +71,7 @@ class DQNAgent:
         self.model.fit(state, target, batch_size=self.batch_number, verbose=0)
 
     def train(self):
-        # Episode Iterations for training
         for i in range(self.episodes):
-            # Environment variables for training
             state = self.env.reset()
             state = np.reshape(state, (1, self.state_space))
             done = False
@@ -87,9 +82,6 @@ class DQNAgent:
                 self.env.render()
                 action = self.act(state)
                 next_state, reward, done, info = self.env.step(action)
-                
-                
-                # Reshape nextstate
                 next_state = np.reshape(next_state, [1, self.state_space])
                 score += 1
                 if done:
@@ -99,10 +91,10 @@ class DQNAgent:
                 state = next_state
                 
                 if done:
-                    print("Episode: {}\nScore: {}\nepsilon: {:.2f}".format(i, score, self.epislon))
+                    print("Episódio: {}\Pontuação: {}".format(i, score, self.epislon))
                     # Save model
                     if score >= 1000:
-                        self.model.save('flappybrain.h5')
+                        self.model.save('wheights.h5')
                         return
                 
                 self.learn()
