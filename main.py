@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+__author__ = "Marlon"
+__company__ = "BrainiaC©"
 
 import time
 import random
