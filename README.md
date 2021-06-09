@@ -3,7 +3,7 @@ Inteligência Artificial e Rede Neural projetada para jogar Flappy Bird. Gym e O
 
 ## Instalação
 ```
-$ git clone 
+$ git clone https://github.com/marlonsousa8/FlappyBird-AI.git
 $ pip3 install -r requirements.txt
 $ python3 main.py
 ```
