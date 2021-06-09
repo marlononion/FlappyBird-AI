@@ -2,14 +2,13 @@
 __author__ = "Marlon"
 __company__ = "BrainiaC©"
 
-import time
 import random
 import numpy as np
 from collections import deque
 import flappy_bird_gym
 
-from keras.layers import Input, Dense
-from keras.models import load_model, save_model, Sequential
+from keras.layers import Dense
+from keras.models import Sequential
 from keras.optimizers import RMSprop
 
 
@@ -96,7 +95,7 @@ class DQNAgent:
                     print("Episódio: {}\Pontuação: {}".format(i, score, self.epislon))
                     # Save model
                     if score >= 1000:
-                        self.model.save('wheights.h5')
+                            self.model.save('model/weights.h5')
                         return
                 
                 self.learn()
