@@ -9,4 +9,4 @@ $ python3 main.py
 ```
 
 ![](https://imgur.com/BMNXZgdl.png)
-![](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/04/Screenshot-2019-04-16-at-5.46.01-PM.png)
+![](https://www.novatec-gmbh.de/wp-content/uploads/reinforcement_learning_loop-650x294.png)
